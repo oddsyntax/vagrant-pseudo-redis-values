@@ -3,22 +3,32 @@
     <title>Michelle Ryals' Tiny Redis-PHP Demo</title>
   </head>
   <body>
-    <h1>This is Michelle Ryals' tiny little redis-php demo.</h1>
-    <p>Wish I had more time to run with this, since the PHP/webserver stuff is rapidly coming back to me, like riding a bike! <br>
-    <em>Sorry for mixing HTML with PHP; it's a bit hackey.</em></p><br>
-
+    <p>This is Michelle Ryals' little redis-php demo.</p>
+    <br>
+    <p>
     <?php
       // Obligatory connection things
       $redis = new Redis();
       $redis->connect('127.0.0.1', 6379);
-      echo "Server is running: ".$redis->ping();
-
+    ?>
+    <em>Ping the Redis Server - is it running?</em> 
+    <?php echo " " . $redis->ping(); ?>
+    </p>
+  
+    <p>
+    <em>Saving a string value to the Redis key "test"...</em>
+    <?php
       // Set some redis value
       $redis->set('test', 'This is a test. This is only a test. Were this a real value, it might contain useful data.');
+    ?>
+    <br><br>
+    <em>Fetching the value from the Redis key "test"...</em>
+    <br><br>
+    <?php
       // Get this redis value
       $redis_value = $redis->get('test');
     ?>
     <strong><?php echo $redis_value;?></strong>
-
+  </p>
   </body>
 </html>

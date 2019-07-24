@@ -13,6 +13,8 @@ if ! [ -L /var/www ]; then
   ln -fs /vagrant /var/www
 fi
 
+sed 's/^/#/' /etc/httpd/conf.d/welcome.conf
+
 systemctl start httpd
 systemctl start redis
 
