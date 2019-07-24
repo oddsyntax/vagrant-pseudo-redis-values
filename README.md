@@ -13,6 +13,6 @@ The default shared vagrant folder was used to contain the web server content rat
 
 I took the easy way out and disabled SELinux for the sake of simplicity, and also disregarded any normal method of configuring network security, etc.
 
-The index.php page itself contains a hybrid html/php mix of content which was heavily used in my former environment which is not my favorite method but is what came to me the fastest so I went with it in the interest of budgeting time.
+The index.php page itself contains a hybrid html/php mix of content which was heavily used in my former environment. It is not the most graceful method but it is what came to me the fastest so I went with it in the interest of budgeting time.
 
 vagrant up will probably run somewhat faster if you comment out the "yum update -y” portion in bootstrap/init.sh
